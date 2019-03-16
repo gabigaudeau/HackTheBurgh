@@ -1,6 +1,5 @@
 #! python3
 import datetime as dt
-import pandas as pd
 import praw as pw
 import praw,requests,re
 import os

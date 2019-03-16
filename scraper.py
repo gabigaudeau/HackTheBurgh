@@ -48,14 +48,19 @@ for i,submission in enumerate(top_submissions):
     print("processing submission: ",i+1)
     url = submission.url
     file_name = url.split("/")
+    skip = False
     if len(file_name) == 0:
         file_name = re.findall("/(.*?)",url)
     file_name = file_name[-1]
     if "." not in file_name:
-        file_name += ".jpg"
+        skip = True
+    if skip:
+        continue
+    parts = file_name.split('.')
+    file_name = '.'+parts[-1]
     print(file_name)
     r = requests.get(url)
-    with open(pathImg+"/roast"+str(i)+".jpg","wb+") as f:
+    with open(pathImg+"/roast"+str(i)+file_name,"wb+") as f:
         f.write(r.content)
 
     submission.comment_sort = 'top'
@@ -63,12 +68,12 @@ for i,submission in enumerate(top_submissions):
     comments = submission.comments
     with open(pathTxt+"/roast"+str(i)+".txt","w+") as f:
         for j,top_level_comment in enumerate(comments):
-            print("roast"+str(i)+".txt")
+
             f.write(formatDisplay(top_level_comment.body))
             f.write(formatProcess(top_level_comment.body))
             with open (path+"/formatedRoasts/roastDatabase.txt","a") as g:
                 g.write(formatProcess(top_level_comment.body))
-                print("expandingroastDatabase.txt")
+
             if j == max_comments-1:
                 break
     if i == max_submissions-1:

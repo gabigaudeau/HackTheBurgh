@@ -8,11 +8,12 @@ import os
 def formatProcess(comment):
     outputString = comment.replace('\n','')
     outputString =re.sub(r'([^\s\w.]|_)+', '', outputString)
-    return outputString[0:min(254,len(comment))] + '\n'
+    return outputString[0:min(254,len(comment))].lower() + '\n'
 
 #format the size of the comment only
 def formatDisplay(comment):
     outputString = comment.replace('\n','')
+    outputString =re.sub(r'([^\s\w.!*,:;@/\+--=#[]{}<>$£\']|_)+', '', outputString)
     return outputString[0:min(254,len(comment))] +'\n'
 
 reddit = pw.Reddit(client_id='C-u-vJYPUPLdfg',

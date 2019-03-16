@@ -7,6 +7,8 @@ import os
 #leave only dots
 def formatProcess(comment):
     outputString = comment.replace('\n','')
+    outputString = outputString.replace('?','.').replace('!','.')
+    outputString = re.sub(r'\.{2,}','.',outputString)
     outputString =re.sub(r'([^\s\w.]|_)+', '', outputString)
     return outputString[0:min(254,len(comment))].lower() + '\n'
 

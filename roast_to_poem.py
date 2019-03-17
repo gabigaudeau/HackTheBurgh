@@ -253,5 +253,10 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
+<<<<<<< HEAD
 main("i think its so nice that they let the mental patients pretend to have jobs.please dont go near the heart attack patients they dont need another",'./trainingSet/formatedRoasts/roastDatabase.txt',
      './python-rhyme-master/phodict.txt')
+=======
+main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
+     './python-rhyme-master/phodict.txt')
+>>>>>>> 22c5626f2832929cb64cdd021524b01ad4cbc4e1

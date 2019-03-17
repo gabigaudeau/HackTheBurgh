@@ -192,8 +192,9 @@ def replace_with_rhyme(roast):
             if word == roast_words[-1]:
                 # replace with rhyming word of same syllable length
                 r1 = tuple(getRhymes(word.upper()))
-                replace1 = random.choice(r1)
-                roast_words[index] = replace1.lower()
+                if r1 is not ():
+                    replace1 = random.choice(r1)
+                    roast_words[index] = replace1.lower()
 
 
         index += 1

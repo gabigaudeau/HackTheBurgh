@@ -20,7 +20,7 @@ def formatProcess(comment):
 def formatDisplay(comment):
     outputString = comment.replace('\n','')
     outputString =re.sub(r'([^\s\w.!*,:;@/\+--=#[]{}<>$£\']|_)+', '', outputString)
-    return outputString[0:min(254,len(comment))].decode("utf-8","ignore") +'\n'
+    return outputString[0:min(254,len(comment))] +'\n'
 
 reddit = pw.Reddit(client_id='C-u-vJYPUPLdfg',
                      client_secret='Hyw3NkOJrL6qufVnIgt7EZ7Xj8k',
@@ -73,12 +73,12 @@ for i,submission in enumerate(top_submissions):
     submission.comment_sort = 'top'
     submission.comments.replace_more(limit=max_comments)
     comments = submission.comments
-    with open(pathTxt+"/roast"+str(i)+".txt","w+") as f:
+    with open(pathTxt+"/roast"+str(i)+".txt","w+",encoding='utf-8') as f:
         for j,top_level_comment in enumerate(comments):
 
             f.write(formatDisplay(top_level_comment.body))
             f.write(formatProcess(top_level_comment.body))
-            with open (path+"/formatedRoasts/roastDatabase.txt","a") as g:
+            with open (path+"/formatedRoasts/roastDatabase.txt","a",encoding='utf-8') as g:
                 g.write(formatProcess(top_level_comment.body))
 
             if j == max_comments-1:

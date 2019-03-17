@@ -243,6 +243,6 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
-main("i liked you a lot more when i didnt know what you looked like. congratulations on lowering the bar on what the term celebrity entails. you look like the type of guy that puts full time activist on resumes.",
-     './trainingSet/formatedRoasts/roastDatabase.txt',
-     './python-rhyme-master/phodict.txt')
+#main("i liked you a lot more when i didnt know what you looked like. congratulations on lowering the bar on what the term celebrity entails. you look like the type of guy that puts full time activist on resumes.",
+#     './trainingSet/formatedRoasts/roastDatabase.txt',
+#     './python-rhyme-master/phodict.txt')

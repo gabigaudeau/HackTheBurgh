@@ -92,7 +92,6 @@ def parse_dict(filepath):
         for line in fileA:
             words = line.split()  # splits the line on any whitespace
             pho_dict[words[0]] = tuple(words[1:])
-
     return pho_dict
 
 #cmu_dict= prep_database('./trainingSet/formatedRoasts/roastDatabase.txt')
@@ -145,7 +144,7 @@ def makeSyllableMap():
         dictA[syllable_count(word)].add(word)
     return dictA
 
-SYLDICT = makeSyllableMap()
+SYLDICT = ()
 
 def getRhymes(word):
     "yields all words that rhyme with word"
@@ -177,13 +176,13 @@ def replace_with_rhyme(roast):
             length=syllable_count(word)
             #if not last word...
             if word != roast_words[-1]:
-                print("not last word")
+
                 # find random other word with same syllable length
                 replace2 = findWord(length)
-                print("replace2", replace2)
+
                 # replace word with random other word
                 roast_words[index] = replace2.lower()
-                print("roast_words[word]", roast_words[index])
+
 
             #if last word...
             if word == roast_words[-1]:
@@ -236,8 +235,14 @@ def roast_me_poem(roast, roast_path):
 
 #API
 def main(text, roast_path, phodict_path):
+    global SYLDICT
     global cmu_dict
     global pho_dict
     cmu_dict = prep_database(roast_path)
-    pho_dict = prep_database(phodict_path)
+    pho_dict = parse_dict(phodict_path)
+    SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
+
+main("i liked you a lot more when i didnt know what you looked like. congratulations on lowering the bar on what the term celebrity entails. you look like the type of guy that puts full time activist on resumes.",
+     './trainingSet/formatedRoasts/roastDatabase.txt',
+     './python-rhyme-master/phodict.txt')

@@ -1,4 +1,5 @@
 import os
+from faces import roast
 from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
 
@@ -15,7 +16,7 @@ def index():
 def upload_file():
     file = request.files['image']
     file.save(secure_filename(file.filename))
-    image_path = os.path.join(app.instance_path, "/uploads", file.filename)
-    poem = image_path
+    image_path = os.path.join(app.instance_path[0:-8], file.filename)
+    poem = roast(image_path)
     return render_template('result.html', value=poem)
 app.run(debug=True)

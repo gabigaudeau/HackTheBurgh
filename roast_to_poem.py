@@ -241,7 +241,3 @@ def main(text, roast_path, phodict_path):
     cmu_dict = prep_database(roast_path)
     pho_dict = prep_database(phodict_path)
     roast_me_poem(text, roast_path)
-
-main("it looks like your chances of growing old are real slim and shady.  your eyes are jealous at your feet because they are together all the time.",
-     './trainingSet/formatedRoasts/roastDatabase.txt',
-     './python-rhyme-master/phodict.txt')

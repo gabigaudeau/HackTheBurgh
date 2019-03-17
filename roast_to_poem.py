@@ -191,7 +191,7 @@ def replace_with_rhyme(roast):
             if word == roast_words[-1]:
                 # replace with rhyming word of same syllable length
                 r1 = tuple(getRhymes(word.upper()))
-                if r1 is not ():
+                if not all(r1):
                     replace1 = random.choice(r1)
                     roast_words[index] = replace1.lower()
 
@@ -253,10 +253,5 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
-<<<<<<< HEAD
-main("i think its so nice that they let the mental patients pretend to have jobs.please dont go near the heart attack patients they dont need another",'./trainingSet/formatedRoasts/roastDatabase.txt',
+main("Do you masturbate with one hand so you can moan with the other.",'./trainingSet/formatedRoasts/roastDatabase.txt',
      './python-rhyme-master/phodict.txt')
-=======
-main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
-     './python-rhyme-master/phodict.txt')
->>>>>>> 22c5626f2832929cb64cdd021524b01ad4cbc4e1

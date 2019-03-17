@@ -253,5 +253,15 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
+<<<<<<< HEAD
 main("Do you masturbate with one hand so you can moan with the other.",'./trainingSet/formatedRoasts/roastDatabase.txt',
      './python-rhyme-master/phodict.txt')
+=======
+#<<<<<<< HEAD
+#main("i think its so nice that they let the mental patients pretend to have jobs.please dont go near the heart attack patients they dont need another",'./trainingSet/formatedRoasts/roastDatabase.txt',
+#     './python-rhyme-master/phodict.txt')
+#=======
+#main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
+#     './python-rhyme-master/phodict.txt')
+#>>>>>>> fd30d12723e3289a836aeba46e587e54ee4be40b
+>>>>>>> 6e9d3dbb519b1bada22e7107824121166dbeb26e

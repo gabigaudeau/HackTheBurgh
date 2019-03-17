@@ -253,5 +253,5 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
-main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
-     './python-rhyme-master/phodict.txt')
+#main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
+#     './python-rhyme-master/phodict.txt')

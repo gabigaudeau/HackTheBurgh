@@ -4,8 +4,6 @@ import praw as pw
 import praw,requests,re,sys
 import os
 
-encoding = sys.getdefaultencoding()
-print(encoding)
 
 #format the comment to fit a line and be ready for poem processing
 #leave only dots

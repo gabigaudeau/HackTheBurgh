@@ -3,6 +3,7 @@
 import os
 import face_recognition
 import numpy as np
+from natsort import natsorted
 
 # Create directory
 dirName = 'encodings'
@@ -14,12 +15,15 @@ except FileExistsError:
     print("Directory " , dirName ,  " already exists")
 
 
-images= os.listdir('trainingSet/faces/')
+images = natsorted(os.listdir('trainingSet/faces/'))
+
+print(images)
 for index,image in enumerate(images):
     current_image = face_recognition.load_image_file('trainingSet/faces/' + image)
     encoding = face_recognition.face_encodings(current_image)
     if (len(encoding)==0):
-        continue
+        encodingFile=open("encodings/encoding"+str(index)+".txt","w+")
+        encodingFile.close()
     else:
         actualImage = encoding[0]
         encodingFile=open("encodings/encoding"+str(index)+".txt","w+")

@@ -1,8 +1,11 @@
 #! python3
 import datetime as dt
 import praw as pw
-import praw,requests,re
+import praw,requests,re,sys
 import os
+
+encoding = sys.getdefaultencoding()
+print(encoding)
 
 #format the comment to fit a line and be ready for poem processing
 #leave only dots
@@ -17,7 +20,7 @@ def formatProcess(comment):
 def formatDisplay(comment):
     outputString = comment.replace('\n','')
     outputString =re.sub(r'([^\s\w.!*,:;@/\+--=#[]{}<>$£\']|_)+', '', outputString)
-    return outputString[0:min(254,len(comment))] +'\n'
+    return outputString[0:min(254,len(comment))].decode("utf-8","ignore") +'\n'
 
 reddit = pw.Reddit(client_id='C-u-vJYPUPLdfg',
                      client_secret='Hyw3NkOJrL6qufVnIgt7EZ7Xj8k',

@@ -3,6 +3,7 @@ import datetime as dt
 import praw as pw
 import praw,requests,re
 import os
+
 #format the comment to fit a line and be ready for poem processing
 #leave only dots
 def formatProcess(comment):

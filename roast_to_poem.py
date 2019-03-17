@@ -55,8 +55,8 @@ def make_CMU_dict(all_words):
 
 
     all_CMU_tokens = { k:v for k,v in all_CMU_tokens.items() if v != [] }
-    print("all")
-    print(all_CMU_tokens)
+
+
     for k,v in all_CMU_tokens.items():
         all_CMU_tokens[k]= tuple(v[0].split())
     return all_CMU_tokens
@@ -73,8 +73,7 @@ def prep_database(filepath): #takes filepath as a string
     #print(all_last_words)
     # dictionary containing all CMU tokens
     cmu_dict = make_CMU_dict(all_last_words)
-    print("cpm")
-    print(cmu_dict)
+
 
 
     return cmu_dict
@@ -254,5 +253,5 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
-main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
+main("i think its so nice that they let the mental patients pretend to have jobs.please dont go near the heart attack patients they dont need another",'./trainingSet/formatedRoasts/roastDatabase.txt',
      './python-rhyme-master/phodict.txt')

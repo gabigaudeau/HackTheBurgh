@@ -26,7 +26,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('./img/ignite.jpg');
+  background-image: url('./img/rose.jpg');
   min-height: 100%;
   height: 100vh;
 }
@@ -36,38 +36,78 @@ body, html {
   background: #fff8e1!important;
 }
 
+/* Button light hover color */
 .w3-button:hover{
   background:#fff8e1!important
 }
 
+/* Dark background color */
+.darkBackground{
+  background:#263238!important;
+}
+
+/* Band style */
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
+/* Font */
 .cormorant{
   font-family:"Cormorant Garamond", serif;
   color: #fff8e1;
 }
 
-.btn-color{
-  background:#263238;
-  color:#fff8e1;
-  opacity:0.65;
-}
-
-.transparentGrey{
-  background:#263238;
-}
-
+/* Navigation Bar Background */
 .navBackground{
   background:#fff8e1;
   color:#263238;
 }
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2 {
     background-attachment: scroll;
     min-height: 400px;
   }
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 300px ;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #263238;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 </style>
 <body>
@@ -79,43 +119,73 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
     <a href="index.html" class="w3-xlarge w3-bar-item w3-button">Home</a>
-    <a href="" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Roast Me Baby</a>
+    <a href="roast_me.html" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Roast Me Baby</a>
     <a href="hall_of_flame.html" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Hall Of Flame</a>
-    <a href="flytes.html" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Flytes</a>
+    <a href="" class="w3-xlarge w3-bar-item w3-button">Flytes</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="cormorant w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
-    <a href="" class="w3-bar-item w3-button" onclick="toggleFunction()">Roast Me Baby</a>
+    <a href="roast_me.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Roast Me Baby</a>
     <a href="hall_of_flame.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Hall Of Flame</a>
-    <a href="flytes.html" class=" w3-bar-item w3-button">Flytes</a>
+    <a href="" class="w3-bar-item w3-button" onclick="toggleFunction()">Flytes</a>
   </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
 <div class="cormorant bgimg-1 w3-display-container" id="home">
   <div class="w3-display-middle" style="width:90%">
-    <p class="w3-center w3-padding-large cormorant w3-xxlarge">
+    <p class="transparentGrey w3-center w3-padding-large cormorant w3-xxlarge">
       <span id="typed"></span>
     </p>
   </div>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-center w3-content w3-padding-64" id="about">
-  <form action="http://localhost:5000/uploads" method="POST" enctype="multipart/form-data" >
-     <span class="btn btn-default btn-file">
-       Browse <input type="file" name="image">
-     </span>
-   <input type="submit" value="Upload your image" class="btn-color w3-btn w3-round-xlarge btn-primary">
- </form>
+<div class="bgimg-2  w3-content w3-container w3-padding-64" id="about">
+  <h1 class="center">Our flights...</h1>
+  <h3><em>The Loner next door</em></h3>
+  <p class="w3-center">you look like everyone eating alone in a mall food court.<br>
+  ive never seen a romance that involves microsofts tech support .<br>
+  how do you look like such a child molester and a molested kid at the same time.<br>
+  you know how the neighbors always say we never would have thought when they are interviewed after the big crime.</p>
+  <hr>
+  <h3><em>Cinnabon-personality-disorder</em></h3>
+  <p class="w3-center">i assume your personality stems from having to go a full deployment without cinnabon.<br>
+    thyme assume your simplification stems from having to go a spar lasumma without cinnabon.<br>
+    you look like somebody rolled a spoon of mayonnaise in pubic hair.<br>
+     billionaire.</p>
+  <hr>
+  <h3><em>NSFW-childhood Trauma</em></h3>
+  <p class="w3-center">
+     if golum and marylin manson had a baby it still wouldnt have sex with you.<br>
+    how ironic johnny cash and a boy who wants to be sue.<br>
+     is junior firefighter what your stepdad calls you when he has you play with his fire hose.<br>
+    you look like the kind of girl that cries during her webcam shows.</p>
+  <hr>
+  <h3><em>Career-development Advice</em></h3>
+  <p class="w3-center">also does this school teach you how to brush your hair.<br>
+   billionaire.<br>
+   You got the lobster and shes got the rolls.<br>
+   click here to find out how selling knives door to door has helped me achieve my goals.</p>
+  <hr>
+  <h3><em>Chicken At Buzzfeed</em></h3>
+  <p class="w3-center">
+      i would be sad too if i raised a rooster.<br>
+    plumes would be lauds temme if numbed raised a rooster.<br>
+     you look like a journalist from buzzfeed.<br>
+    most girls under the staircase will go bareback but not bared kneed.</p>
+  <hr>
+  <h3><em>Wizzard Wanted</em></h3>
+  <p class="w3-center">dear god i got my virginity back just looking at this.<br>
+    do you always bump teeth when you kiss .<br>
+    discount silent bob is looking for you.<br>
+    how ironic johnny cash and a boy who wants to be sue.</p>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 <script>
-
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -145,8 +215,9 @@ function toggleFunction() {
     }
 }
 
+
 var typed = new Typed('#typed', {
-    strings: ["\"Roast me baby one more time\"<br>~ nut"],
+    strings: ["\"Nobody is hotter than God...\""],
     typeSpeed: 65
   });
 </script>

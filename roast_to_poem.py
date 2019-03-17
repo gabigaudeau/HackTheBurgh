@@ -55,6 +55,8 @@ def make_CMU_dict(all_words):
 
 
     all_CMU_tokens = { k:v for k,v in all_CMU_tokens.items() if v != [] }
+    print("all")
+    print(all_CMU_tokens)
     for k,v in all_CMU_tokens.items():
         all_CMU_tokens[k]= tuple(v[0].split())
     return all_CMU_tokens
@@ -67,10 +69,12 @@ def prep_database(filepath): #takes filepath as a string
 
     # making dictionary of all last words + their sentence in roasts-file (key:last words, value: sentence the last word belonged to)
     all_last_words = find_last_word(sample_text)
-
+    #print("last")
+    #print(all_last_words)
     # dictionary containing all CMU tokens
     cmu_dict = make_CMU_dict(all_last_words)
-
+    print("cpm")
+    print(cmu_dict)
 
 
     return cmu_dict
@@ -214,11 +218,17 @@ def roast_me_poem(roast, roast_path):
         for key2,value2 in cmu_dict.items():
 
             # if they rhyme, add value of word1 and value of word2 to my_roast_poem
-            if is_rhyme(key1, key2,cmu_dict) == True:
+            if (key1 in cmu_dict and key2 in cmu_dict):
+                if is_rhyme(key1, key2,cmu_dict) == True:
 
-                my_roast_poem.update(((value1, all_last_roast_words[key2]),))
+                    my_roast_poem.update(((value1, all_last_roast_words[key2]),))
+                else:
+                    pass
             else:
-                pass
+                rhyme = replace_with_rhyme(value1)
+
+                my_roast_poem.update(((value1, rhyme),))
+
 
         if value1 not in my_roast_poem.keys():
 
@@ -243,6 +253,5 @@ def main(text, roast_path, phodict_path):
     SYLDICT = makeSyllableMap()
     roast_me_poem(text, roast_path)
 
-#main("i liked you a lot more when i didnt know what you looked like. congratulations on lowering the bar on what the term celebrity entails. you look like the type of guy that puts full time activist on resumes.",
-#     './trainingSet/formatedRoasts/roastDatabase.txt',
-#     './python-rhyme-master/phodict.txt')
+main("wipe your lip after rimming",'./trainingSet/formatedRoasts/roastDatabase.txt',
+     './python-rhyme-master/phodict.txt')

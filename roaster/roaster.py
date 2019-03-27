@@ -78,4 +78,4 @@ def roastMe(filename,datafile):
     roasts = selectRoasts(roast_submissions)
     return roasts
 
-print(roastMe('testVictim.jpg','database'))
+#print(roastMe('testVictim.jpg','database'))

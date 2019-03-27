@@ -1,0 +1,10 @@
+boost==0.1
+cmake==3.13.3
+dlib==19.17.0
+face-recognition==1.2.3
+face-recognition-models==0.3.0
+numpy==1.16.2
+praw==5.4.0
+python-dateutil==2.8.0
+requests==2.21.01
+websocket-client==0.55.0

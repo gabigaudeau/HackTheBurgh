@@ -65,7 +65,7 @@ def selectRoasts(submission_dicts):
         #for now choose first top comment for each face
         roast_dict["comment"] = dict["comments"][0]
         roast_dict["url"] = dict["url"]
-        roast_dicts["id"] = dict["id"]
+        roast_dict["id"] = dict["id"]
         roast_dicts.append(roast_dict)
     return roast_dicts
 

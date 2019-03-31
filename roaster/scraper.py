@@ -379,5 +379,10 @@ def main():
     createDatabase(data_filename,ling_filename,limit,min_karma,min_comments,offset)
     validateDatabase(data_filename,ling_filename)
 
+def countData(filename):
+    data = loadData(filename)
+    length = print(len(data))
+    return length
+
 if __name__ == "__main__":
     main()

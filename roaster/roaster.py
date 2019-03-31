@@ -1,6 +1,6 @@
 from scraper import loadData,formatToPoem
 import face_recognition
-import numpy, re, sys
+import numpy, re, sys, random
 #THE FULL PATH + NAME + EXTENSION, returns array of encodings
 def getEncodedingsInPic(filepath):
     pic = face_recognition.api.load_image_file(filepath)
@@ -63,7 +63,8 @@ def selectRoasts(submission_dicts):
     for dict in submission_dicts:
         roast_dict = {}
         #for now choose first top comment for each face
-        roast_dict["comment"] = dict["comments"][0]
+        rand = random.randint(0,len(dict["comments"])-1)
+        roast_dict["comment"] = dict["comments"][rand]
         roast_dict["url"] = dict["url"]
         roast_dict["id"] = dict["id"]
         roast_dicts.append(roast_dict)
@@ -78,4 +79,4 @@ def roastMe(filename,datafile):
     roasts = selectRoasts(roast_submissions)
     return roasts
 
-#print(roastMe('testVictim.jpg','database'))
+print(roastMe('testVictim.jpg','database'))

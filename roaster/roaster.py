@@ -79,5 +79,6 @@ def roastMe(filename,datafile):
     roasts = selectRoasts(roast_submissions)
     return roasts
 
+
 if __name__ == "__main__":
     print(roastMe('testVictim.jpg','database'))

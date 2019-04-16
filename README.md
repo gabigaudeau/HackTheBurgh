@@ -8,7 +8,7 @@
 
 # The Team
 
--  Lars ([HeadOfTheOrder](https://github.com/HeadOfTheOrder))
+-  Lars ([HeadOfTheOrder](https://github.com/TheCopperMind))
 -  Charly ([Mahinkana](https://github.com/Mahinkana))
 -  Maks ([makspll](https://github.com/makspll))
 -  Gabi ([theHappyCarrot](https://github.com/theHappyCarrot))

@@ -37,4 +37,5 @@ def upload_file():
     roast = roastMe(image_path,'data/database')
     return render_template('result.html', value=roast)
 if __name__ =='__main__':
-    app.run(threaded=True, port=5000,debug=True)
+    port = int(os.environ.get('PORT',33507))
+    app.run(host='0.0.0.0',threaded=True, port=port,debug=False)

@@ -1,6 +1,25 @@
-from scraper import loadData,formatToPoem
+
 import face_recognition
 import numpy, re, sys, random
+
+#FROM SCRAPER FOR SIMPLICITY
+#will pull into list of dictionaries
+def loadData(filename):
+    with open(filename+'.json','r') as f:
+        return json.load(f)
+#fiona use this to format, if isn't as clean as you need, make changes here
+def formatToPoem(comment):
+    newlines = re.sub(r'\n',' ',comment.lower().strip('. '))
+    punctuated = re.sub(r'[!?]','.',newlines)
+    repetitions = re.sub(r'(([^A-Za-z])\2\2*)',r'\2',punctuated)
+    characterReptitions = re.sub(r'((.)\2\2\2*)',r'\2',repetitions)
+    result = re.sub('[^A-Za-z.\"\' ]','',characterReptitions)
+    return result
+
+
+#FROM SCRAPER FOR SIMPLICITY
+
+
 #THE FULL PATH + NAME + EXTENSION, returns array of encodings
 def getEncodedingsInPic(filepath):
     pic = face_recognition.api.load_image_file(filepath)

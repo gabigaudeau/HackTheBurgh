@@ -1,5 +1,5 @@
 # Hack the Burgh 2019 Roastr #
-deployed at (https://git.heroku.com/roastr-htb.git)
+deployed at https://roastr-htb.herokuapp.com
 # Prerequisite
  - To be added
 

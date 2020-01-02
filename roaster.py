@@ -1,6 +1,7 @@
 
 import face_recognition
 import numpy, re, sys, random
+import json
 
 #FROM SCRAPER FOR SIMPLICITY
 #will pull into list of dictionaries
@@ -22,8 +23,12 @@ def formatToPoem(comment):
 
 #THE FULL PATH + NAME + EXTENSION, returns array of encodings
 def getEncodedingsInPic(filepath):
-    pic = face_recognition.api.load_image_file(filepath)
-    return face_recognition.api.face_encodings(pic)
+    try:
+        pic = face_recognition.api.load_image_file(filepath)
+        return face_recognition.api.face_encodings(pic)
+    except Exception:
+        return []
+    
 
 #for a single encoding, returns the id of submission
 def findClosestEncoding(encoding,data):

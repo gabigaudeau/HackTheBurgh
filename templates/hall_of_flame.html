@@ -26,7 +26,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('./img/fog.jpg');
+  background-image: url('../static/fog.jpg');
   min-height: 100%;
   height: 100vh;
 }
@@ -118,15 +118,15 @@ body, html {
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="index.html" class="w3-xlarge w3-bar-item w3-button">Home</a>
-    <a href="roast_me.html" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Roast Me Baby</a>
+    <a href="{{url_for('index')}}" class="w3-xlarge w3-bar-item w3-button">Home</a>
+    <a href="{{url_for('roast_me')}}" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Roast Me Baby</a>
     <a href="" class="w3-xlarge w3-bar-item w3-button w3-hide-small">Hall Of Flame</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="cormorant w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
-    <a href="roast_me.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Roast Me Baby</a>
+    <a href="{{url_for('index')}}" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+    <a href="{{url_for('roast_me')}}" class="w3-bar-item w3-button" onclick="toggleFunction()">Roast Me Baby</a>
     <a href="" class="w3-bar-item w3-button" onclick="toggleFunction()">Hall Of Flame</a>
   </div>
 </div>
